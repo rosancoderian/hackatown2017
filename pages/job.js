@@ -1,6 +1,7 @@
 import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
+import * as firebase from 'firebase'
 
 const Job = (props) => (
 	<Layout title={props.job.title}>
@@ -17,7 +18,7 @@ const Job = (props) => (
 				</div>
 			</div>
 			<div className='detail'>
-				{props.job.description}
+				{props.job.desc}
 			</div>
 
 			{/*
@@ -48,13 +49,16 @@ const Job = (props) => (
 	</Layout>
 )
 
-Job.getInitialProps = async function (context) {
-	const { id } = context.query
-	//const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
-	const res = await fetch(`http://localhost:3004/jobs/${id}`)
-	const job = await res.json()
+Job.componentDidMount = async function (context) {
 
-	console.log(`Fetched: ${job.title}`)
+}
+
+Job.getInitialProps = async (context) => {
+	//const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
+	const { id } = context.query
+
+	let result = await firebase.database().ref(`/jobs/${id}`).once('value')
+	let job = result.val()
 
 	return { job }
 }
