@@ -46,7 +46,7 @@ export default class FbLoginButton extends Component {
   render () {
     return <div>
       { !this.state.user.displayName ?
-      <button type="button" class="btn btn-primary" style={{cursor: 'pointer', textTransform: 'lowercase', fontSize: '14px'}} onClick={this.login}>
+      <button type="button" className="btn btn-primary" style={{cursor: 'pointer', textTransform: 'lowercase', fontSize: '14px'}} onClick={this.login}>
         {/*<i class="fa fa-facebook-official" style={iconStyle}></i>*/}
         Login With Facebook
         <style jsx>{`
