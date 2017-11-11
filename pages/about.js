@@ -1,9 +1,9 @@
 // @flow
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default () => (
-  <Layout title='About us'>
-    <div>About us</div>
-  </Layout>
+	<Layout title='About us'>
+		<div>About us</div>
+	</Layout>
 )
