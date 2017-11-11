@@ -46,3 +46,7 @@ declare module "next/document" {
     renderPage(cb: Function): void;
   };
 }
+
+declare module "firebase" {
+  declare module.exports: any;
+}

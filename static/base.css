@@ -3,6 +3,7 @@ body { text-rendering: optimizeLegibility; }
 a:hover, li:hover .title { color: #ff431d; }
 h1,h2,h3,h4,h5,h6,.h2,.h3,.h4,.h5,.h6 { font-family: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 .card { box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2); background: #fff; color: #999; }
+.button, button { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 /*!
 // CSS Grid

@@ -4,13 +4,30 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Footer from './Footer'
 import Header from './Header'
+import firebase from 'firebase'
 
 type Props = {
 	children?: Element<any>,
 	title?: string
 }
 
-export default ({children, title = 'Donate your skills for a good cause, gain experience'}: Props) => (
+try {
+  let config = {
+    apiKey: "AIzaSyBQSUZkiKkz70i9nIlG-e4Z1TRhU-uN3Xc",
+    authDomain: "hackatown2017-bf7dd.firebaseapp.com",
+    databaseURL: "https://hackatown2017-bf7dd.firebaseio.com",
+    projectId: "hackatown2017-bf7dd",
+    storageBucket: "hackatown2017-bf7dd.appspot.com",
+    messagingSenderId: "648683273287"
+  };
+  if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+  }
+} catch (err) {
+  console.log(err)
+}
+
+export default ({children, title = 'sumbangkarya — Donate your skills for a good cause, gain experience'}: Props) => (
 	<div>
 		<Head>
 			<title>{title}</title>
@@ -20,6 +37,10 @@ export default ({children, title = 'Donate your skills for a good cause, gain ex
 			<link href='/static/base.css' rel='stylesheet' />
 			<link href='https://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' />
 			<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,700,800' rel='stylesheet' />
+			{/*
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+			*/}
 		</Head>
 		<Header />
 		<main role='main'>{children}</main>

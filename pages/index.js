@@ -2,6 +2,7 @@
 import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
+import FbLoginButton from '../components/FbLoginButton'
 //import { Transition } from 'react-transition-group'
 //import { CSSTransition } from 'react-transition-group'
 //import { CSSTransition, TransitionGroup } from 'react-transition-group'
