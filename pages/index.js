@@ -1,9 +1,12 @@
 // @flow
 
 import Layout from '../components/layout'
+import FbLoginButton from '../components/FbLoginButton'
 
 export default () => (
   <Layout>
-    <div>Hello World.</div>
+    <section class="container-fluid">
+      <FbLoginButton />
+    </section>
   </Layout>
 )
