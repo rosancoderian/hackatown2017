@@ -1,55 +1,7 @@
 body, ul { margin: 0; }
-body { text-rendering: optimizeLegibility; }
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 a:hover, li:hover .title { color: #ff431d; }
 h1,h2,h3,h4,h5,h6,.h2,.h3,.h4,.h5,.h6 { font-family: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 .card { box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2); background: #fff; color: #999; }
 .button, button { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-
-/*!
-// CSS Grid
-//	https://gridbyexample.com/patterns/header-twocol-footer-responsive/
-// ------------------------------------------------
-*/
-.wrapper {
-	max-width: 940px;
-	margin: 0 20px;
-	display: grid;
-	grid-gap: 10px;
-}
-@media screen and (min-width: 500px) {
-	/* Fallback */
-	.sidebar {
-		float: left;
-		width: 19.1489%;
-	}
-	.content {
-		float: right;
-		width: 79.7872%;
-	}
-	.wrapper {
-		margin: 0 auto;
-		grid-template-columns: 1fr 3fr;
-	}
-	header, footer {
-		grid-column: 1 / -1; /* needed for the floated layout */
-		clear: both;
-	}
-}
-.wrapper > * {
-	background-color: #444;
-	color: #fff;
-	border-radius: 5px;
-	padding: 20px;
-	font-size: 150%;
-	/* needed for the floated layout*/
-	margin-bottom: 10px;
-}
-/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
-@supports (display: grid) {
-	.wrapper > * {
-		width: auto;
-		margin: 0;
-	}
-}
-
-
+.list-inline li { display: inline-block; }

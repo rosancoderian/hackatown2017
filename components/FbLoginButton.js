@@ -57,7 +57,7 @@ export default class FbLoginButton extends Component {
       :
       <div>
         <span style={{marginRight: '10px'}}>{this.state.user.displayName}</span>
-        <button type="button" class="btn btn-primary" style={{cursor: 'pointer'}} onClick={this.logout}>
+        <button type="button" className="btn btn-primary" style={{cursor: 'pointer'}} onClick={this.logout}>
           Logout
         </button>
       </div>
