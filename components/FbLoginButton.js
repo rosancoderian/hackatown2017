@@ -2,6 +2,7 @@
 
 import {Component} from 'react'
 import firebase from 'firebase'
+import Link from 'next/link'
 
 const iconStyle = {
   marginRight: '10px',
@@ -45,19 +46,19 @@ export default class FbLoginButton extends Component {
   }
   render () {
     return <div>
+      <style jsx>{`
+        button { background: #3b5998 !important; padding: 8px 16px; transition: background linear .2s; }
+        button:hover { background: #234487 !important; }
+      `}</style>
       { !this.state.user.displayName ?
       <button type="button" className="btn btn-primary" style={{cursor: 'pointer', textTransform: 'lowercase', fontSize: '14px'}} onClick={this.login}>
-        {/*<i class="fa fa-facebook-official" style={iconStyle}></i>*/}
+        {/* <i class="fa fa-facebook-official" style={iconStyle}></i> */}
         Login With Facebook
-        <style jsx>{`
-          button { background: #3b5998 !important; padding: 8px 16px; transition: background linear .2s; }
-          button:hover { background: #234487 !important; }
-        `}</style>
       </button>
       :
       <div>
-        <span style={{marginRight: '10px'}}>{this.state.user.displayName}</span>
-        <button type="button" className="btn btn-primary" style={{cursor: 'pointer'}} onClick={this.logout}>
+        <Link href='/profile'><a style={{marginRight: '10px'}}>{this.state.user.displayName}</a></Link>
+        <button type="button" className="btn btn-primary" style={{cursor: 'pointer', textTransform:'lowercase'}} onClick={this.logout}>
           Logout
         </button>
       </div>

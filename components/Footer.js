@@ -2,8 +2,11 @@ import Link from 'next/link'
 
 const Footer = () => (
 	<footer>
-		<small className='muted'>&copy; 2017 Pitutur</small> &nbsp;
-		{/*<img src="/static/icons/fb-share.png" />*/}
+		<small className='muted'>
+			Berbagi keterampilan ke yang membutuhkan
+			&middot;
+			&copy; 2017 <strong className='h6'>pitutur</strong> for <strong className='h6'>hackatown2017</strong>
+		</small>
 		<style jsx>{`
 			footer { 
 				text-align: center;

@@ -5,3 +5,10 @@ h1,h2,h3,h4,h5,h6,.h2,.h3,.h4,.h5,.h6 { font-family: 'Work Sans', 'Helvetica Neu
 .card { box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2); background: #fff; color: #999; }
 .button, button { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 .list-inline li { display: inline-block; }
+.text-truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}

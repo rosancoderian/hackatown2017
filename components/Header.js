@@ -17,22 +17,22 @@ const Header = () => (
 				</a>
 			</Link>
 			<ul className='list-inline' style={{fontSize: '14px'}}>
-				<Link href='/about'><li><a href="">apa itu sumbangkarya?</a></li></Link>
+				<Link href='/about'><li><a href="">tentang sumbangkarya</a></li></Link>
 				{/*<Link href='/auth'><li><a href="">akun</a></li></Link>*/}
-				<li><FbLoginButton style={{textTransform:'lowercase'}} /></li>
+				<li><FbLoginButton /></li>
 			</ul>
 		</nav>
 		<style jsx>{`
 			a { text-decoration: none; color: rgba(0,0,0,0.7); }
 			a:hover { color: #222; }
-			h3 { 
+			h3 {
 				margin: 0;
 				display: table-cell;
 				vertical-align: middle;
 			}
-			header { 
-				margin-bottom: 3rem; 
-				padding: 1rem; 
+			header {
+				margin-bottom: 3rem;
+				padding: 1rem;
 				padding-bottom: 0;
 				position: fixed;
 				width: 100%;
@@ -41,14 +41,14 @@ const Header = () => (
 			}
 			i { display: none; }
 			img { width: 3.2rem; }
-			li { 
-				display: inline-block; 
-				margin-left: 1rem; 
+			li {
+				display: inline-block;
+				margin-left: 1rem;
 			}
 			li a {}
 			.logo, h3 { color: rgba(0,0,0,0.7); }
-			.logo { 
-				font-weight: 800; 
+			.logo {
+				font-weight: 800;
 				display: table;
 				margin-top: -0.25rem;
 				float: left;

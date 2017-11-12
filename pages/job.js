@@ -1,6 +1,7 @@
 import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
+import * as firebase from 'firebase'
 
 const Job = (props) => (
 	<Layout title={props.job.title}>
@@ -28,9 +29,7 @@ const Job = (props) => (
 			</div>
 			<div className='detail description'>
 				{props.job.description}
-				{/*
-				<button className='btn' style={{marginTop:18}}><a className='share-link h6'><img src="/static/icons/share.svg" style={{height:12}} />&nbsp;bagikan</a></button>
-				*/}
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 			<div className='detail'>
 				<h4 style={{padding:'1.2rem', paddingBottom:0, marginBottom:'-8px', fontWeight: 400}}>Penyelenggara</h4>
@@ -39,7 +38,7 @@ const Job = (props) => (
 						<a href="https://web.facebook.com/Internetdotorg/" target="_blank"><img src="/static/sample-profpic-1.png" style={{borderRadius:'50%'}} /></a>
 					</div>
 					<div className='col col-10' style={{padding: '1.2rem', paddingLeft: 0}}>
-						<h5 style={{margin:0}}><a href="https://web.facebook.com/Internetdotorg/" target="_blank">Nama Institusi&nbsp;<img src="/static/icons/verified.svg" />&nbsp;<img src="/static/icons/fb.png" /></a></h5>
+						<h5 style={{margin:0}}><a href="https://web.facebook.com/Internetdotorg/" target="_blank">{props.job.organization} &nbsp;<img src="/static/icons/verified.svg" />&nbsp;<img src="/static/icons/fb.png" /></a></h5>
 						<p>Internet.org is a Facebook-led initiative bringing together technology leaders, nonprofits and communities to connect the two thirds of the world that doesn’t have internet access.</p>
 					</div>
 				</div>
@@ -133,13 +132,16 @@ const Job = (props) => (
 	</Layout>
 )
 
-Job.getInitialProps = async function (context) {
-	const { id } = context.query
-	//const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
-	const res = await fetch(`http://localhost:3004/jobs/${id}`)
-	const job = await res.json()
+Job.componentDidMount = async function (context) {
 
-	console.log(`Fetched: ${job.title}`)
+}
+
+Job.getInitialProps = async (context) => {
+	//const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
+	const { id } = context.query
+
+	let result = await firebase.database().ref(`/jobs/${id}`).once('value')
+	let job = result.val()
 
 	return { job }
 }

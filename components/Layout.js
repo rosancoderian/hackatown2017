@@ -46,13 +46,13 @@ export default ({children, title = 'sumbangkarya — Donate your skills for a go
 		<main role='main'>{children}</main>
 		<Footer />
 		<style jsx global>{`
-			a { cursor: pointer; } 
-			body { 
-				background: #a1eded; 
-				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+			a { cursor: pointer; }
+			body {
+				background: #a1eded;
+				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 			main { min-height: 69vh; margin-top: 6rem; }
-			ul { padding-left: 0; list-style-type: none; } 
+			ul { padding-left: 0; list-style-type: none; }
 		`}</style>
 	</div>
 )
